@@ -1,0 +1,24 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow p-4">
+          <h4 class="mb-4 text-center">Meet Link</h4>
+          <form action="{% url 'googleLinkForm' id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="googleLink" class="form-label">Enter google meet link</label>
+              <input type="text" class="form-control" id="googleLink" placeholder="Enter meet link..." name="googleLink">
+            </div>
+  
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}
